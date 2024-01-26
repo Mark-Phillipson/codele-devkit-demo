@@ -58,7 +58,7 @@ namespace Codele.Pages
 
         // use as Copilot example
         // Reset and start a new game
-        private void StartNewGame()
+        private async Task StartNewGame()
         {
             showModal = false;
             guesses.Clear();
@@ -69,8 +69,7 @@ namespace Codele.Pages
             {
                 answer = answers[randomGenerator.Next(0, answers.Length)];
             }
-            StateHasChanged();
-            // await guess.FocusAsync();
+            await guess.FocusAsync();
         }
 
         // Close the game status modal
